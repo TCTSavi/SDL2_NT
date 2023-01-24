@@ -1,5 +1,6 @@
 #include "SDL2_App.h"
 
-int main(){
-    std::cout << "Ola mundo";
+int main( int argc,char* args[]){
+    //std::cout << "Ola mundo";
+    return 0;
 }
