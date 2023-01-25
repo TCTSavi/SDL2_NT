@@ -23,7 +23,7 @@ all: ${P_BIN}/${MAIN}.exe
 	$<
 	
 ${P_BIN}/${MAIN}.exe: ${P_OBJ}/${MAIN}.o ${MOBJS} ${IOBJS} ${IRC} 
-	${CC}  -static-libgcc -static-libstdc++ -o $@ $< $(patsubst %,${P_OBJ}/%,$(MOBJS)) $(patsubst %,${P_OBJ}/%,$(IOBJS)) $(patsubst %,${P_RES}/%,$(IRC)) -L"lib\\extlib\\i686-w64-mingw32\\SDL2"
+	${CC}  -static-libgcc -static-libstdc++ -o $@ $< $(patsubst %,${P_OBJ}/%,$(MOBJS)) $(patsubst %,${P_OBJ}/%,$(IOBJS)) $(patsubst %,${P_RES}/%,$(IRC)) -lSDL2main -lSDL2
 	
 ${P_OBJ}/${MAIN}.o: ${MAIN}.cpp ${MAIN}.h ${DFiles}.h
 	${CC}  -c $< -o $@
